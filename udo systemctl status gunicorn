@@ -1,0 +1,14 @@
+[0;1;32m●[0m gunicorn_agrozor.service - Gunicorn daemon for Django project 'agrozor'
+     Loaded: loaded (]8;;file://srv787325/etc/systemd/system/gunicorn_agrozor.service/etc/systemd/system/gunicorn_agrozor.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Fri 2025-07-18 12:19:54 UTC; 1min 56s ago
+   Main PID: 519290 (gunicorn)
+      Tasks: 4 (limit: 9486)
+     Memory: 46.5M (peak: 46.9M)
+        CPU: 530ms
+     CGroup: /system.slice/gunicorn_agrozor.service
+             ├─[0;38;5;245m519290 /var/www/django_project/venv/bin/python3 /var/www/django_project/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:5555 agrozor.wsgi:application[0m
+             ├─[0;38;5;245m519292 /var/www/django_project/venv/bin/python3 /var/www/django_project/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:5555 agrozor.wsgi:application[0m
+             ├─[0;38;5;245m519293 /var/www/django_project/venv/bin/python3 /var/www/django_project/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:5555 agrozor.wsgi:application[0m
+             └─[0;38;5;245m519294 /var/www/django_project/venv/bin/python3 /var/www/django_project/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:5555 agrozor.wsgi:application[0m
+
+Jul 18 12:19:54 srv787325 systemd[1]: Started gunicorn_agrozor.service - Gunicorn daemon for Django project 'agrozor'.
