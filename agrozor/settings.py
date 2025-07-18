@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'Main',
     'rest_framework',
     'rest_framework_simplejwt',
-    # 'corsheaders',
+    'corsheaders',
         'drf_spectacular',  # Add this
 
     'django_filters',
@@ -112,6 +112,8 @@ CORS_ALLOWED_ORIGINS = [
     # Add your production domains here
 ]
 MIDDLEWARE = [
+        'corsheaders.middleware.CorsMiddleware',  # Add this at the TOP!
+
    'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',  # Logs broken links
 
@@ -203,7 +205,35 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Default is the database
 
 
+# CORS Configuration
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3001",
+    "http://69.62.84.47:3000",
+    "https://agrozor.com",
+    "https://agro-zor-addm.vercel.app",
+]
 
+# For development, you can also use:
+CORS_ALLOW_ALL_ORIGINS = True  # Only for development!
+
+# Allow credentials
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow these headers
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
 CKEDITOR_UPLOAD_PATH = "uploads/"
